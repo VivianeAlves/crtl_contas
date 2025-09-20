@@ -23,7 +23,7 @@ gem "kaminari"
 
 gem "activesupport", "~> 8.0.2"
 
-gem 'rails-i18n', '~> 8.0.0'
+gem 'rails-i18n', '~> 8.0.2'
 
 # Use Active Model has_secure_password [https://guides.rubyonrails.org/active_model_basics.html#securepassword]
 # gem "bcrypt", "~> 3.1.7"
