@@ -1,0 +1,44 @@
+<div id="<%= dom_id conta %>">
+    <div class="job-grid", style="border-bottom: 1px solid #ddd;">
+        <div>
+            <h2 class="job-title">
+                <a href="contas/<%=conta.id%>"><%= conta.nome %>
+                </a>
+                <%if (conta.pago?)%>
+                <p class="badge green">
+                Conta foi paga!
+                <%else%>
+                <p class="badge red">
+                  Conta NÃO foi paga!
+                <%end%>
+            </p></h2>
+            
+            <p class="job-department">
+            <%if (!conta.vencimento.nil?)%>
+                Vencimento dia 
+                <%= formatar_data(conta.vencimento) %>
+            <%else%>
+                Parcela única sem data pré-definida!
+            <%end%><br>
+            </p>
+            <p class="job-department">
+                <%if (!conta.n_parc_restantes.nil?)%>
+                    Faltam <%= conta.n_parc_restantes%> parcelas<br style="margin-bottom:10px !important;">
+                <%end%>
+            </p>
+        </div>
+        <div>
+            <p class="job-type">
+            <%if (conta.ativo?)%>
+            <p class="badge green">
+                Ativo!
+            </p>
+            <%else%>
+             <p class="badge red">
+                Não Ativo!!
+            </p>
+            <%end%></p>
+            <p class="job-location"><%= TipoConta.find(conta.tipo_conta_id).nome %></p>
+        </div>
+    </div>
+</div>

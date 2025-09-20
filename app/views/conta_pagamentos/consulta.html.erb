@@ -1,0 +1,43 @@
+<center><h2>Consulta de Pagamentos</h2></center>
+
+<div id="pagamentos" style="display: flex !important; justify-content: center !important;">
+
+<table class="pure-table pure-table-bordered ">
+    <thead>
+        <tr>
+            <th>Conta</th>
+            <th>Data de Pagamento</th>
+            <th>Parcela</th>
+            <th>Ação</th>
+        </tr>
+    </thead>
+    <tbody>
+      <% @pagamentos.each do |pagamento| %>
+      <%= render partial: "conta_pagamentos/pagamento", locals: { pagamento: pagamento } %>
+      <% end %>
+    </tbody>
+</table>
+
+</div>
+
+<div class="pagination">
+  <%= paginate @pagamentos %>
+</div>
+
+<p></p>
+<center><span>Mostrando <%=@pagamentos.current_page%> de <%= @pagamentos.total_pages%> páginas - Total: <%=@pagamentos.total_count%> resultados</span></center>
+
+<style>
+ .bt-edit-table{
+    background-color: #00a9be;
+    color: white;
+    padding: 5px 10px;
+
+ }
+
+  .bt-edit-table:visited{
+    background-color: #8bc7cfff;
+    color: white;
+  }
+ 
+</style>

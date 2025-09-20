@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @tipo_conta %>
+
+<div>
+  <%= link_to "Edit this tipo conta", edit_tipo_conta_path(@tipo_conta) %> |
+  <%= link_to "Back to tipo contas", tipo_contas_path %>
+
+  <%= button_to "Destroy this tipo conta", @tipo_conta, method: :delete %>
+</div>

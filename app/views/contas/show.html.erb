@@ -1,0 +1,24 @@
+<script>
+    // Exibir o toast
+    function showToast() {
+      const toast = document.getElementById('myToast');
+      toast.classList.add('show');
+      
+      // Esconder o toast após 3 segundos
+      setTimeout(() => {
+        toast.classList.remove('show');
+      }, 3000);
+    }
+
+    // Mostrar o toast ao carregar a página
+    window.onload = showToast;
+  </script>
+
+<p id="myToast" class="toast"><%= notice %></p>
+<%= render partial: "contas/conta_show", locals: { conta:@conta } %>
+<div>
+  <%= link_to "Editar conta", edit_conta_path(@conta) %> |
+  <%= link_to "Voltar para contas", contas_path %>
+
+  <%= button_to "Deletar conta", @conta, method: :delete, class:"pure-button delete-button" %>
+</div>

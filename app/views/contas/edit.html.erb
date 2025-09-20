@@ -1,0 +1,12 @@
+<% content_for :title, "Editando conta" %>
+
+<h1>Editando conta</h1>
+
+<%= render "form", conta: @conta %>
+
+<br>
+
+<div>
+  <%= link_to "Mostrar conta", @conta %> |
+  <%= link_to "Voltar para contas", contas_path %>
+</div>

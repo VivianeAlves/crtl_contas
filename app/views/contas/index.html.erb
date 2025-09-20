@@ -1,0 +1,39 @@
+<% if notice%>
+  <p style="color: green"><%= notice %></p>
+<% end%>
+
+<% content_for :title, "Contas" %>
+
+<div class="menu">
+  <%= button_to "Atualizar Contas", atualiza_contas_path, method: :post, class: "btn btn-primary" %> 
+</div>
+
+<h2 class="title">Contas</h2>
+
+<div id="contas">
+  <% @contas.each do |conta| %>
+    <%= render conta %>
+  <% end %>
+  <%if (@contas.empty?)%>
+    <%=render partial: 'empty_contas'%>
+  <%end%>
+</div>
+
+<%= link_to "Nova conta", new_conta_path %>
+
+<style>
+.btn.btn-primary {
+  background-color: #8c8c8c;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.btn.btn-primary:hover {
+  color: beige;
+}
+</style>

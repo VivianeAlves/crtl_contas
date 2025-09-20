@@ -1,0 +1,11 @@
+<% content_for :title, "New conta" %>
+
+<h1>Nova Conta</h1>
+
+<%= render "form", conta: @conta %>
+
+<br>
+
+<div>
+  <%= link_to "Voltar para contas", contas_path %>
+</div>

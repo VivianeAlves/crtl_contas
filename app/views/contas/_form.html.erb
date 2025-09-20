@@ -1,0 +1,91 @@
+<section class="updates">
+<%= form_with(model: conta, html:{class:"pure-form pure-form-stacked"}) do |form| %>
+  <% if conta.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(conta.errors.count, "error") %> prohibited this conta from being saved:</h2>
+
+      <ul>
+        <% conta.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :nome, style: "display: block" %>
+    <%= form.text_field :nome %>
+  </div>
+
+  <div>
+    
+  <div>
+    <%= form.label :tipo_conta_id, "Tipo de Conta", style: "display: block" %>
+    <%= form.collection_select :tipo_conta_id, TipoConta.all, :id, :nome, prompt: 'Selecione um tipo'%>
+  </div>
+
+<div id="campos-temporarios" style="display: none;">
+
+  <div>
+    <%= form.label :inicio, style: "display: block" %>
+    <%= form.date_field :inicio %>
+  </div>
+
+  <div>
+    <%= form.label :fim, style: "display: block" %>
+    <%= form.date_field :fim %>
+  </div>
+
+  <div>
+    <%= form.label :vencimento, style: "display: block" %>
+    <%= form.date_field :vencimento %>
+  </div>
+
+  <div>
+    <%= form.label "parcelas restantes", style: "display: block" %>
+    <%= form.number_field :n_parc_restantes %>
+  </div>
+
+ <div>
+    <%= form.label "Número total de parcelas", style: "display: block" %>
+    <%= form.number_field :total_parc %>
+  </div>
+
+
+</div>
+
+  <div>
+    <%= form.label :pago, style: "display: block" %>
+    <%= form.checkbox :pago %>
+  </div>
+
+  <div>
+    <%= form.label :ativo, style: "display: block" %>
+    <%= form.checkbox :ativo %>
+  </div>
+
+  <div>
+    <%= form.submit "Enviar Dados!", class:"pure-button submit-button" %>
+  </div>
+<% end %>
+</section>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    const select = document.getElementById("conta_tipo_conta_id");
+    const campos = document.getElementById("campos-temporarios");
+
+    function toggleCampos() {
+      // Pegue o texto do option selecionado
+      const selectedText = select.options[select.selectedIndex]?.text;
+      if (selectedText === "Temporária") {
+        campos.style.display = "block";
+      } else {
+        campos.style.display = "none";
+      }
+    }
+
+    select.addEventListener("change", toggleCampos);
+    toggleCampos(); // Executa ao carregar a página
+  });
+</script>

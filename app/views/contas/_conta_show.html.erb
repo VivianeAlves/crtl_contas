@@ -1,0 +1,61 @@
+<div id="<%= dom_id conta %>">
+    <div class="pure-g">
+        <div>
+            <h2 class="job-title"><%= conta.nome %></p></h2>
+            <p class="job-department">
+                <strong>
+                    <%if (conta.pago?)%>
+                        Conta foi paga!
+                    <%else%>
+                        Conta NÃO foi paga!
+                    <%end%>
+                </strong>
+            </p>
+            <br>
+            <%if conta.compara_current_conta_id_c_tpconta("Temporária")%>
+                <p class="job-department"><strong>N° parcela: </strong><%= conta.n_parc_restantes %><br></p>
+                <p class="job-department"><strong>Total de parcelas: </strong><%= conta.total_parc %><br></p>
+            <%end%>
+            
+            <p class="job-department">
+             <strong>Inicio:</strong>
+                <%if (conta.inicio)%>
+                    <%= formatar_data(conta.inicio) %>
+                <%else%>
+                   Não Cadastrado!
+                <%end%>
+            </p>
+            <br>
+
+             <p class="job-department">
+                <strong>Fim:</strong>
+                <%if (conta.fim)%>
+                    <%= formatar_data(conta.fim) %>
+                <%else%>
+                Não Cadastrado!
+                <%end%>
+            </p>
+            <br>
+            <p class="job-department">
+            <strong>Vencimento:</strong>
+                <%= formatar_data(conta.vencimento) %>
+            </p>
+            <p class="job-department">
+                <%if (conta.ativo?)%>
+                <p class="badge green">
+                Ativo!
+            </p>
+            <%else%>
+            <p class="badge red">
+                Não Ativo!!
+            </p>
+            <%end%>
+            <br>
+            <p class="job-department">
+                <strong>Tipo de Conta:</strong> 
+                <%= conta.tipo_conta.nome %>
+            </p>
+            <p></p>
+        </div>
+    </div>
+</div>

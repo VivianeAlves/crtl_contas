@@ -1,0 +1,21 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  nome: MyString
+  tipo_conta: one
+  inicio: 2025-04-18
+  fim: 2025-04-18
+  vencimento: 1
+  pago: false
+  n_parc: 1
+  ativo: false
+
+two:
+  nome: MyString
+  tipo_conta: two
+  inicio: 2025-04-18
+  fim: 2025-04-18
+  vencimento: 1
+  pago: false
+  n_parc: 1
+  ativo: false

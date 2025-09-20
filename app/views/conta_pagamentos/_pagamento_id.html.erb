@@ -1,0 +1,11 @@
+<tr id="pagamento_<%=pagamento.id%>">
+<td><%=pagamento.conta.nome%></td>
+    <td><%=pagamento.data_pagamento.strftime('%d/%m/%Y')%></td>
+    <td><%=pagamento.calculo_parcelas_pagas%>
+    <% if pagamento.verifica_se_parcela_total_existe %>
+        /<%= pagamento.retona_total_de_parcelas%></td>
+    <% end %>
+    </td>
+    <td><a href="/consulta" class="editar-btn">Voltar</a></td>
+    
+</tr>
