@@ -21,7 +21,7 @@ gem 'rufus-scheduler'
 
 gem "kaminari"
 
-gem "activesupport", "~> 8.0.2"
+gem "activesupport", "~> 8.0.4"
 
 gem 'rails-i18n', '~> 8.0.0'
 
