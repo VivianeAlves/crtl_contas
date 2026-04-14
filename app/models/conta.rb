@@ -41,14 +41,11 @@ class Conta < ApplicationRecord
   end
 
 
-
-
   #jobs cria no banco os temporarios enquanto tiver parcela ou tiverem data em vigencia para pagamento
-  #a cada parcela paga diminuir do total de parcelas
+  #a cada parcela paga diminui do total de parcelas
   #guardar a data em q a conta foi paga!
   #criar tabela que consta as datas de pagamento de cada conta - conta acompanhamento
   #modelagem um para muitos, na qual uma conta tem varias datas de pagamento - e numero da parcela (se houver)
-  #fazer rollback no banco quando modelar a nova tabela (amanhã 02/05)
   #só mostrar parcelas e total parcelas se a conta for temporaria
   #só renderizar os campos de parcela se a conta for temporaria
 end

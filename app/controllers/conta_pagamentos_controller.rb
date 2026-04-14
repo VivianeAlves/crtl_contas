@@ -20,7 +20,7 @@ class ContaPagamentosController < ApplicationController
   private
 
    def pagamento_params
-    params.require(:conta_pagamento).permit(:data_pagamento, :parcela)
+    params.require(:conta_pagamento).permit(:data_pagamento)
    end
 
 end

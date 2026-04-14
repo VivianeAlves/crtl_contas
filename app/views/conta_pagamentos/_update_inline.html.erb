@@ -2,7 +2,6 @@
   <%= form_with(model: pagamento, url: conta_pagamento_path(pagamento), method: :patch, remote: true) do |f| %>
     <td><%= pagamento.conta.nome %></td>
     <td><%= f.date_field :data_pagamento %></td>
-    <td><%= f.number_field :parcela %></td>
     <td><%= f.submit "Salvar" %></td>
   <% end %>
 </tr>

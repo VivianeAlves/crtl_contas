@@ -1,6 +1,8 @@
 class ContaPagamento < ApplicationRecord
     belongs_to :conta
 
+    #TODO drop atributto parcela da tabela conta_pagamento
+
     def retona_total_de_parcelas
         if verifica_se_parcela_total_existe
             return conta.total_parc
@@ -9,9 +11,7 @@ class ContaPagamento < ApplicationRecord
 
     def calculo_parcelas_pagas
         if verifica_se_parcela_total_existe
-            return (conta.total_parc - self.parcela)+1
-        else
-            return self.parcela
+            return (conta.total_parc - conta.n_parc_restantes)
         end
     end
 

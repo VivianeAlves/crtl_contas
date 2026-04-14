@@ -1,9 +1,9 @@
 <tr id="pagamento_<%=pagamento.id%>">
     <td><%= pagamento.conta.nome %></td>
     <td><%= formatar_data(pagamento.data_pagamento) %></td>
-    <td><%= pagamento.calculo_parcelas_pagas %>
+    <td>
     <% if pagamento.verifica_se_parcela_total_existe %>
-        /<%= pagamento.retona_total_de_parcelas%></td>
+    <%= pagamento.calculo_parcelas_pagas %>/<%= pagamento.retona_total_de_parcelas %></td>
     <% end %>
     <td><%= link_to "Editar", edit_conta_pagamento_path(pagamento), class:"bt-edit-table", remote: true, data: { id: pagamento.id } %></td>        
 </tr>

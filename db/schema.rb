@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_09_17_041152) do
+ActiveRecord::Schema[8.0].define(version: 2026_04_14_044315) do
   create_table "atualizacoes", force: :cascade do |t|
     t.date "ultima_atualizacao", null: false
     t.datetime "created_at", null: false
@@ -20,7 +20,6 @@ ActiveRecord::Schema[8.0].define(version: 2025_09_17_041152) do
   create_table "conta_pagamentos", force: :cascade do |t|
     t.date "data_pagamento"
     t.integer "conta_id", null: false
-    t.integer "parcela"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["conta_id"], name: "index_conta_pagamentos_on_conta_id"
