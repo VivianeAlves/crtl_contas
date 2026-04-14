@@ -1,6 +1,8 @@
 class Conta < ApplicationRecord
   belongs_to :tipo_conta
   has_many :conta_pagamentos, class_name: "ContaPagamento", dependent: :destroy
+  # se necessário na hora de editar o pagamento em contas_pagamentos, 
+  # criar um campo na listagem de pagamentos para editar a parcela que foi paga
 
   def ajustes_data_pagamento_e_parcelas
     if pago
@@ -10,7 +12,7 @@ class Conta < ApplicationRecord
   end
 
   def define_data_pagamento
-    ContaPagamento.create(data_pagamento: Date.today, parcela: n_parc_restantes, conta_id: id)
+    ContaPagamento.create(data_pagamento: Date.today, conta_id: id)
   end
 
   def calcula_parcela_atual
